@@ -16,7 +16,9 @@ export default {
 
 			colors: {
 
-				"mojo_black" : "#14111D"
+				"mojo_black": "#14111D",
+				"mojo_dark_green": "#1E4D32"
+
 			}
 		},
 	},
