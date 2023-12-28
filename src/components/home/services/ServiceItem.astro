@@ -1,0 +1,11 @@
+---
+// IMPORT ASTRO ATOMS
+import H3 from "../../../atoms/H3.astro"
+import Paragraph from "../../../atoms/Paragraph.astro"
+
+const { title, description } = Astro.props
+---
+<div class="space-y-2">
+    <H3>{ title }</H3>
+    <Paragraph>{ description }</Paragraph>
+</div>
