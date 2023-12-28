@@ -10,18 +10,20 @@ import { endpointFetch } from "../functions/endpoint"
 
 // IMPORT ASTRO COMPONENTS
 import Layout from "../layouts/Layout.astro"
+
+import Footer from "../components/common/Footer.astro"
+import Header from "../components/common/Header.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 
-import Header from "../components/common/Header.astro"
-import Hero from "../components/home/Hero.astro"
-import Work from "../components/home/Work.astro"
-import Services from "../components/home/Services.astro"
-import MoreServices from "../components/home/MoreServices.astro"
 import AcceleratingLeaders from "../components/home/AcceleratingLeaders.astro"
-import ViewWork from "../components/home/ViewWork.astro"
 import Advantage from "../components/home/Advantage.astro"
-import OurProcess from "../components/home/OurProcess.astro"
 import Clients from "../components/home/Clients.astro"
+import Hero from "../components/home/Hero.astro"
+import MoreServices from "../components/home/MoreServices.astro"
+import OurProcess from "../components/home/OurProcess.astro"
+import Services from "../components/home/Services.astro"
+import ViewWork from "../components/home/ViewWork.astro"
+import Work from "../components/home/Work.astro"
 
 ---
 <Layout>
@@ -36,4 +38,5 @@ import Clients from "../components/home/Clients.astro"
 	<Advantage />
 	<OurProcess />
 	<Clients />
+	<Footer />
 </Layout>
