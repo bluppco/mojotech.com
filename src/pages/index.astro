@@ -8,11 +8,13 @@ import { endpointFetch } from "../functions/endpoint"
 // const network_data = await fetch( endpoint + "/home" )
 // const data_json = await network_data.json()
 
-// IMPORT ASTRO COMPONENTS
+// IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
+import Container from "../layouts/Container.astro"
 
+// IMPORT ASTRO COMPONENTS
 import Footer from "../components/common/Footer.astro"
-import Header from "../components/common/Header.astro"
+import Header from "../components/common/header/Header.jsx"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 
 import AcceleratingLeaders from "../components/home/AcceleratingLeaders.astro"
@@ -28,15 +30,17 @@ import Work from "../components/home/Work.astro"
 ---
 <Layout>
 	<HeaderBanner />
-	<Header/>
-	<Hero />
-	<Work />
-	<Services />
-	<MoreServices />
-	<AcceleratingLeaders />
-	<ViewWork />
-	<Advantage />
-	<OurProcess />
-	<Clients />
+	<Header client:load />
+	<Container>
+		<Hero />
+		<Work />
+		<Services />
+		<MoreServices />
+		<AcceleratingLeaders />
+		<ViewWork />
+		<Advantage />
+		<OurProcess />
+		<Clients />
+	</Container>
 	<Footer />
 </Layout>
