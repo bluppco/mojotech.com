@@ -1,17 +1,42 @@
 ---
 import { endpointFetch } from "../functions/endpoint"
 
-const runtime = Astro.locals.runtime;
-const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+// const runtime = Astro.locals.runtime;
+// const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 
-// NETWORK CALL TO GET DATA
-const network_data = await fetch( endpoint + "/home" )
-const data_json = await network_data.json()
+// // NETWORK CALL TO GET DATA
+// const network_data = await fetch( endpoint + "/home" )
+// const data_json = await network_data.json()
 
 // IMPORT ASTRO COMPONENTS
 import Layout from "../layouts/Layout.astro"
+
+import Footer from "../components/common/Footer.astro"
+import Header from "../components/common/Header.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
+
+import AcceleratingLeaders from "../components/home/AcceleratingLeaders.astro"
+import Advantage from "../components/home/Advantage.astro"
+import Clients from "../components/home/Clients.astro"
+import Hero from "../components/home/Hero.astro"
+import MoreServices from "../components/home/MoreServices.astro"
+import OurProcess from "../components/home/OurProcess.astro"
+import Services from "../components/home/Services.astro"
+import ViewWork from "../components/home/ViewWork.astro"
+import Work from "../components/home/Work.astro"
+
 ---
 <Layout>
 	<HeaderBanner />
+	<Header/>
+	<Hero />
+	<Work />
+	<Services />
+	<MoreServices />
+	<AcceleratingLeaders />
+	<ViewWork />
+	<Advantage />
+	<OurProcess />
+	<Clients />
+	<Footer />
 </Layout>
