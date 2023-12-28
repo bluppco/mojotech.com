@@ -1,0 +1,37 @@
+---
+// IMPORT ASTRO ATOMS
+import H3 from "../../../atoms/H3.astro"
+import Paragraph from "../../../atoms/Paragraph.astro"
+
+const {
+
+    src,
+    alt,
+    title,
+    description,
+    href,
+    button_title,
+    aria_label
+
+} = Astro.props
+---
+<div class="space-y-4">
+    <div class="w-full aspect-square bg-zinc-200">
+        <img
+            src={ src }
+            alt={ alt }
+            class="w-full h-full object-cover"
+        />
+    </div>
+    <H3>{ title }</H3>
+    <Paragraph>{ description }</Paragraph>
+    <div class="pt-4">
+        <a
+            href={ href }
+            class="text-lg underline"
+            aria-label={ aria_label }
+        >
+            { button_title }
+        </a>
+    </div>
+</div>
