@@ -1,13 +1,14 @@
-<section class="bg-white text-gray-900">
-  <div class="container mx-auto px-4 py-12 text-center">
-    <h1 class="text-5xl font-bold mb-6">
-      Software Development & Design for Innovative Companies
-    </h1>
-    <p class="text-lg mb-6">
-      MojoTech is a premier product development and application modernization agency.
-    </p>
-    <button class="border border-black px-6 py-2 mt-4 hover:bg-gray-100">
-      Build Better Software
-    </button>
-  </div>
+---
+// IMPORT ASTRO ATOMS
+import H1 from "../../atoms/H1.astro"
+import Button from "../../atoms/Button.astro"
+---
+<section class="space-y-20 py-32">
+	<div class="space-y-6">
+		<H1>Software Development & Design for Innovative Companies</H1>
+		<p class="text-2xl">
+			MojoTech is a premier product development and application modernization agency.
+		</p>
+	</div>
+	<Button>Build Better Software</Button>
 </section>

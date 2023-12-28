@@ -5,7 +5,7 @@ import HeaderItem from "./HeaderItem"
 const Header = () => {
 
 	return(
-			<header className="bg-white flex items-center">
+			<header className="bg-white flex items-center py-20">
 				<ContainerJSX>
 					<div className="flex items-center">
 						<a href="/" aria-label="logo">
