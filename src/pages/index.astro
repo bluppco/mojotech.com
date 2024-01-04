@@ -8,35 +8,39 @@ import { endpointFetch } from "../functions/endpoint"
 // const network_data = await fetch( endpoint + "/home" )
 // const data_json = await network_data.json()
 
-// IMPORT ASTRO COMPONENTS
+// IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
+import Container from "../layouts/Container.astro"
 
-import Footer from "../components/common/Footer.astro"
-import Header from "../components/common/Header.astro"
+// IMPORT ASTRO COMPONENTS
+import Footer from "../components/common/footer/Footer.astro"
+import Header from "../components/common/header/Header.jsx"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 
-import AcceleratingLeaders from "../components/home/AcceleratingLeaders.astro"
-import Advantage from "../components/home/Advantage.astro"
-import Clients from "../components/home/Clients.astro"
+import AcceleratingLeaders from "../components/home/case-studies/AcceleratingLeaders.astro"
+import Advantage from "../components/home/advantage/Advantage.astro"
+import Clients from "../components/home/clients/Clients.astro"
 import Hero from "../components/home/Hero.astro"
 import MoreServices from "../components/home/MoreServices.astro"
 import OurProcess from "../components/home/OurProcess.astro"
-import Services from "../components/home/Services.astro"
+import Services from "../components/home/services/Services.astro"
 import ViewWork from "../components/home/ViewWork.astro"
 import Work from "../components/home/Work.astro"
 
 ---
 <Layout>
 	<HeaderBanner />
-	<Header/>
-	<Hero />
-	<Work />
-	<Services />
-	<MoreServices />
-	<AcceleratingLeaders />
-	<ViewWork />
-	<Advantage />
-	<OurProcess />
-	<Clients />
+	<Header client:load />
+	<Container>
+		<Hero />
+		<Work />
+		<Services />
+		<MoreServices />
+		<AcceleratingLeaders />
+		<ViewWork />
+		<Advantage />
+		<OurProcess />
+		<Clients />
+	</Container>
 	<Footer />
 </Layout>
