@@ -1,3 +1,6 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from 'react-responsive-carousel'
+
 // IMPORT JSX ATOMS
 import H2JSX from "../../../atoms/jsx/H2"
 
@@ -29,25 +32,27 @@ const Clients = ( props ) => {
 			<p className="text-2xl">
 				MojoTech partners with progressive organizations to deliver solutions requiring speed, scale, security, and innovation.
 			</p>
-			{
+			<Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ true }>
+				{
 
-				testimonial.map( ( item, index ) => {
+					testimonial.map( ( item, index ) => {
 
-					return(
-						<div key={ "testimonial-" + index }>
-							<Testimonials
-								author_name={ item.author_name }
-								author_designation={ item.author_designation }
-								src={ item.src }
-								alt={ item.alt }
-								review={ item.review }
-							/>
-						</div>
-					)
+						return(
+							<div key={ "testimonial-" + index }>
+								<Testimonials
+									author_name={ item.author_name }
+									author_designation={ item.author_designation }
+									src={ item.src }
+									alt={ item.alt }
+									review={ item.review }
+								/>
+							</div>
+						)
 
-				})
+					})
 
-			}
+				}
+			</Carousel>
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10">
 				{
 
