@@ -25,15 +25,18 @@ import MoreServices from "../components/home/MoreServices.astro"
 import OurProcess from "../components/home/OurProcess.astro"
 import Services from "../components/home/services/Services.astro"
 import ViewWork from "../components/home/ViewWork.astro"
-import Work from "../components/home/Work.astro"
+import Work from "../components/home/Work"
 
+const images = [ "/credit-karma.svg", "/innovation.svg" ]
 ---
 <Layout>
 	<HeaderBanner />
 	<Header client:load />
 	<Container>
 		<Hero />
-		<Work />
+	</Container>
+	<Work data={ images } client:load />
+	<Container>
 		<Services />
 		<MoreServices />
 		<AcceleratingLeaders />
