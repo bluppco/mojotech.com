@@ -11,7 +11,7 @@ const Accordion = ( props ) => {
     const isOpen = index === expand
 
     return (
-        <section className="flex items-start border-b border-zinc-200 pb-10">
+        <section className="flex items-start border-b border-zinc-200 py-8">
             <motion.section
                 initial={ false }
                 onClick={() => updateExpand(isOpen ? false : index )}
