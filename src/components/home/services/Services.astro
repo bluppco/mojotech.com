@@ -4,6 +4,13 @@ import H2 from "../../../atoms/H2.astro"
 
 // IMPORT ASTRO COMPONENTS
 import ServiceItem from "./ServiceItem.astro"
+
+const data = Array(4).fill({
+
+	title: "Product Development & Innovation",
+	description: "We act as your product development team, collaborating closely to help refine ideas and build the necessary software to get products to launch. We work with you to internalize your vision, balancing immediate needs with your long-term goals while building on a scalable technical foundation."
+
+})
 ---
 <section>
 	<div>
@@ -14,22 +21,20 @@ import ServiceItem from "./ServiceItem.astro"
 			</p>
 		</div>
 		<div class="grid grid-cols-2 gap-x-8 gap-y-16 py-20">
-			<ServiceItem
-				title="Product Development & Innovation"
-				description="We act as your product development team, collaborating closely to help refine ideas and build the necessary software to get products to launch. We work with you to internalize your vision, balancing immediate needs with your long-term goals while building on a scalable technical foundation."
-			/>
-			<ServiceItem
-				title="Product Development & Innovation"
-				description="We act as your product development team, collaborating closely to help refine ideas and build the necessary software to get products to launch. We work with you to internalize your vision, balancing immediate needs with your long-term goals while building on a scalable technical foundation."
-			/>
-			<ServiceItem
-				title="Product Development & Innovation"
-				description="We act as your product development team, collaborating closely to help refine ideas and build the necessary software to get products to launch. We work with you to internalize your vision, balancing immediate needs with your long-term goals while building on a scalable technical foundation."
-			/>
-			<ServiceItem
-				title="Product Development & Innovation"
-				description="We act as your product development team, collaborating closely to help refine ideas and build the necessary software to get products to launch. We work with you to internalize your vision, balancing immediate needs with your long-term goals while building on a scalable technical foundation."
-			/>
+			{
+
+				data.map( ( item ) => {
+
+					return(
+						<ServiceItem
+							title={ item.title }
+							description={ item.description }
+						/>
+					)
+
+				})
+
+			}
 		</div>
 	</div>
 </section>
