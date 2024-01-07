@@ -24,10 +24,11 @@ const data = Array(4).fill({
 	<div class="grid grid-cols-2 gap-8">
 		{
 
-			data.map( ( item ) => {
+			data.map( ( item, index ) => {
 
 				return(
 					<CaseStudy
+						top_padding={ index % 2 }
 						src={ item.src }
 						alt={ item.alt }
 						title={ item.title }

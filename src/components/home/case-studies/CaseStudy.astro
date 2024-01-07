@@ -11,11 +11,12 @@ const {
     description,
     href,
     button_title,
-    aria_label
+    aria_label,
+    top_padding
 
 } = Astro.props
 ---
-<div class="space-y-4">
+<div class={` ${ top_padding ? "pt-20" : "" } space-y-4`}>
     <div class="w-full aspect-square bg-zinc-200">
         <img
             src={ src }
