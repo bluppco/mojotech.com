@@ -1,33 +1,88 @@
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+
 // IMPORT JSX ATOMS
 import H3JSX from "../../../atoms/jsx/H3"
 import ParagraphJSX from "../../../atoms/jsx/Paragraph"
 
-const AdvantageItem = ( props ) => {
+const Accordion = ( props ) => {
 
-    const {
+    const { expand, updateExpand, value, index } = props
+    const isOpen = index === expand
 
-        src,
-        alt,
-        title,
-        description
-
-    } = props
-
-    return(
-        <div className="flex items-center justify-between border-b border-zinc-200 pb-10">
-            <div className="flex gap-4">
-                <div className="size-8 bg-zinc-200">
+    return (
+        <section className="flex items-start border-b border-zinc-200 pb-10">
+            <motion.section
+                initial={ false }
+                onClick={() => updateExpand(isOpen ? false : index )}
+                className="p-2 md:p-4 cursor-pointer flex items-center gap-4"
+            >
+                <div className="size-12">
                     <img
-                        src={ src }
-                        alt={ alt }
-                        className="size-8"
+                        className="size-12"
+                        src={ value.src }
+                        alt={ value.alt }
                     />
                 </div>
-                <H3JSX>{ title }</H3JSX>
-                <ParagraphJSX>{ description }</ParagraphJSX>
+                <div className="flex-wrap">
+                    <H3JSX>{ value.title }</H3JSX>
+                </div>
+            </motion.section>
+            <div className="pl-40 pt-6">
+                <AnimatePresence initial={ false }>
+                    <motion.div
+                        key="content"
+                        initial="collapsed"
+                        animate={ isOpen ? "open" : "collapsed" }
+                        exit="collapsed"
+                        variants={{
+                            open: { opacity: 1, height: "auto" },
+                            collapsed: { opacity: 0, height: 0 }
+                        }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <ParagraphJSX>{ value.description }</ParagraphJSX>
+                    </motion.div>
+                </AnimatePresence>
             </div>
-            <span>+</span>
-        </div>
+            <motion.section
+                initial={ false }
+                onClick={() => updateExpand(isOpen ? false : index )}
+                className="p-2 md:p-4 cursor-pointer flex items-center gap-4"
+            >
+                <div className="w-8 md:w-12 aspect-square">
+                    <div className="w-8 md:w-12 aspect-square rounded-full flex justify-center items-center">
+                        <motion.img
+                            className={`${ isOpen ? "rotate-180": "rotate-0" } w-5 h-5 transition-all duration-300`}
+                            src={`${ isOpen ? "/icons/close.svg": "/icons/open.svg" }`}
+                        />
+                    </div>
+                </div>
+            </motion.section>
+        </section>
+    )
+
+}
+const AdvantageItem = ( props ) => {
+
+    const { data } = props
+
+    const [ expand, updateExpand ] = useState( 0 )
+
+    return (
+        <section>
+            {
+
+                data.map( ( value, index ) => {
+
+                    return (
+                        <Accordion expand={ expand } updateExpand={ updateExpand } value={ value } index={ index } key={ "advantage-" + index }/>
+                    )
+
+                })
+
+            }
+        </section>
     )
 
 }
