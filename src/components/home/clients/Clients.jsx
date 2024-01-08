@@ -29,7 +29,7 @@ const Clients = ( props ) => {
 	return(
 		<section className="space-y-10 py-20">
 			<H2JSX>A Trusted Software Development Partner</H2JSX>
-			<p className="text-2xl">
+			<p className="text-2xl font-gt_america_light">
 				MojoTech partners with progressive organizations to deliver solutions requiring speed, scale, security, and innovation.
 			</p>
 			<Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ true }>
