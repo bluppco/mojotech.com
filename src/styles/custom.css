@@ -1,0 +1,6 @@
+.markdown p{
+    @apply text-lg py-2;
+}
+.markdown a{
+    @apply underline;
+}

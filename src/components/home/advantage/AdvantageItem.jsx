@@ -65,7 +65,7 @@ const Accordion = ( props ) => {
                     </div>
                 </motion.section>
             </section>
-            <section className="pt-4">
+            <section className="pt-4 md:hidden">
                 <AnimatePresence initial={ false }>
                     <motion.div
                         key="content"

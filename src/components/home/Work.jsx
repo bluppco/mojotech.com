@@ -12,7 +12,7 @@ const Work = ( props ) => {
         <section className="container mx-auto px-4 sm:px-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-lg mac:max-w-screen-xl 2xl:max-w-screen-2xl py-20 md:pt-8 md:pb-40">
             <section className="grid grid-cols-2 gap-4 md:gap-10">
                 <div className="flex flex-col-reverse md:grid md:grid-cols-3 gap-4 md:gap-10">
-                    <div className="flex md:flex-col md:justify-end">
+                    <div className="flex md:flex-col md:justify-end md:mb-10">
                         <Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ false }>
                             {
 
