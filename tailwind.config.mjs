@@ -14,6 +14,14 @@ export default {
 		},
 		extend: {
 
+			fontFamily: {
+
+				"gt_america_regular": [ "GT America Standard Regular", "sans-serif" ],
+				"gt_america_light": [ "GT America Standard Thin", "sans-serif" ],
+				"altis": [ "Altis Regular", "sans-serif" ],
+
+			},
+
 			colors: {
 
 				"mojo_black": "#14111D",
