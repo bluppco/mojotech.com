@@ -1,12 +1,57 @@
 ---
 import { endpointFetch } from "../functions/endpoint"
 
-// const runtime = Astro.locals.runtime;
-// const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 
-// // NETWORK CALL TO GET DATA
-// const network_data = await fetch( endpoint + "/home" )
-// const data_json = await network_data.json()
+// NETWORK CALL TO GET DATA
+const network_data = await fetch( endpoint + "/home" )
+const data_json = await network_data.json()
+
+const { home, services, work, advantages, testimonials, meta_tags } = data_json.data
+
+// HOME PROPS
+let hero = null
+let carousel = null
+let service = null
+let more_services = null
+let our_work = null
+let work_carousel_one = null
+let work_carousel_two = null
+let work_carousel_three = null
+let advantage = null
+let our_process = null
+let trusted_partner = null
+let clients = null
+
+home.map( ( data ) => {
+
+	if( data.slug === "hero" )
+		hero = data
+    else if( data.slug === "carousel" )
+		carousel = data
+	else if ( data.slug === "services" )
+		service = data
+    else if ( data.slug === "more-services" )
+		more_services = data
+    else if ( data.slug === "work" )
+		our_work = data
+    else if ( data.slug === "work-carousel-one" )
+		work_carousel_one = data
+	else if( data.slug === "work-carousel-two" )
+		work_carousel_two = data
+	else if ( data.slug === "work-carousel-three" )
+		work_carousel_three = data
+    else if ( data.slug === "advantage" )
+		advantage = data
+    else if ( data.slug === "our-process" )
+		our_process = data
+    else if ( data.slug === "trusted-partner" )
+		trusted_partner = data
+	else if ( data.slug === "clients" )
+		clients = data
+
+})
 
 // IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
@@ -18,29 +63,53 @@ import Header from "../components/common/header/Header.jsx"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 
 import AcceleratingLeaders from "../components/home/case-studies/AcceleratingLeaders.astro"
-import Advantage from "../components/home/advantage/Advantage.astro"
-import Clients from "../components/home/clients/Clients.astro"
+import Advantage from "../components/home/advantage/Advantage"
+import Clients from "../components/home/clients/Clients"
 import Hero from "../components/home/Hero.astro"
 import MoreServices from "../components/home/MoreServices.astro"
 import OurProcess from "../components/home/OurProcess.astro"
 import Services from "../components/home/services/Services.astro"
 import ViewWork from "../components/home/ViewWork.astro"
-import Work from "../components/home/Work.astro"
+import Work from "../components/home/Work"
 
+// IMPORT CONSTANTS
+import { CDN_LINK } from "../constants/cdn"
 ---
-<Layout>
+<Layout
+	title={ meta_tags.title }
+	description={ meta_tags.description }
+	image={ CDN_LINK + meta_tags.cover }
+>
 	<HeaderBanner />
 	<Header client:load />
 	<Container>
-		<Hero />
-		<Work />
-		<Services />
-		<MoreServices />
-		<AcceleratingLeaders />
-		<ViewWork />
-		<Advantage />
-		<OurProcess />
-		<Clients />
+		<Hero data={ hero } />
+	</Container>
+	<Work
+		client:load
+		carousel_one={ work_carousel_one }
+		carousel_two={ work_carousel_two }
+		carousel_three={ work_carousel_three }
+	/>
+	<Container>
+		<Services
+			data={ services }
+			services={ service }
+		/>
+		<MoreServices data={ more_services } />
+		<AcceleratingLeaders data={ work } />
+		<ViewWork data={ our_work } />
+		<Advantage
+			client:load
+			data={ advantages }
+			advantage={ advantage }
+		/>
+		<OurProcess data={ our_process } />
+		<Clients
+			client:load
+			clients ={ clients }
+			data ={ testimonials }
+		/>
 	</Container>
 	<Footer />
 </Layout>

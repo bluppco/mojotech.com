@@ -25,18 +25,18 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
 import { frontmatter as footerColumnThree } from "../../../content/footer-titles/title-three.md"
 import { frontmatter as footerColumnFour } from "../../../content/footer-titles/title-four.md"
 ---
-<footer class="bg-mojo_dark_green py-40 z-30 relative">
-    <section class="container sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-[1180px] mac:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
+<footer class="bg-mojo_dark_green py-20 md:py-40 z-50 relative">
+    <section class="container px-4 md:px-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-[1180px] mac:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
         <section class="space-y-2">
-            <p class="text-white text-xl">Ready to get started?</p>
+            <p class="text-white text-lg md:text-xl font-gt_america_light">Ready to get started?</p>
             <div class="flex gap-6 items-center">
-                <p class="text-white text-6xl font-bold">Let’s talk software</p>
-                <div class="p-4 bg-white hover:bg-green-600 group rounded-full">
-                    <div class="size-5 group-hover:hidden">
+                <p class="text-white text-3xl md:text-6xl font-altis">Let’s talk software</p>
+                <div class="p-2 md:p-4 bg-white hover:bg-green-600 group rounded-full">
+                    <div class="size-3 md:size-5 group-hover:hidden">
                         <img
                             src="/icons/black_right_arrow.svg"
                             alt=""
-                            class="size-5"
+                            class="size-3 md:size-5"
                         />
                     </div>
                     <div class="size-5 hidden group-hover:block">
@@ -48,13 +48,13 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                     </div>
                 </div>
             </div>
-            <p class="text-white">Check out our ★★★★★ reviews on Clutch.</p>
+            <p class="text-white font-gt_america_light">Check out our ★★★★★ reviews on Clutch.</p>
         </section>
-        <section class="py-20 border-b border-white">
+        <section class="py-10 md:py-20 border-b border-white/20">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col">
                     <div class="pb-2">
-                        <p class="uppercase text-white/60">{ footerColumnOne.title }</p>
+                        <p class="uppercase text-white/60 font-gt_america_mono">{ footerColumnOne.title }</p>
                     </div>
                     {
 
@@ -63,7 +63,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white text-lg group">
+                                        <li class="text-white text-lg group font-gt_america_regular">
                                             <a href={ item.data.link }>
                                                 <p>{ item.data.title }</p>
                                             </a>
@@ -77,9 +77,9 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
 
                     }
                 </div>
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col">
                     <div class="pb-2">
-                        <p class="uppercase text-white/60">{ footerColumnTwo.title }</p>
+                        <p class="uppercase text-white/60 font-gt_america_mono">{ footerColumnTwo.title }</p>
                     </div>
                     {
 
@@ -88,7 +88,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white text-lg group">
+                                        <li class="text-white text-lg group font-gt_america_regular">
                                             <a href={ item.data.link }>
                                                 <p>{ item.data.title }</p>
                                             </a>
@@ -102,9 +102,9 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
 
                     }
                 </div>
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col">
                     <div class="pb-2">
-                        <p class="uppercase text-white/60">{ footerColumnThree.title }</p>
+                        <p class="uppercase text-white/60 font-gt_america_mono">{ footerColumnThree.title }</p>
                     </div>
                     {
 
@@ -113,7 +113,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white text-lg group">
+                                        <li class="text-white text-lg group font-gt_america_regular">
                                             <a href={ item.data.link }>
                                                 <p>{ item.data.title }</p>
                                             </a>
@@ -127,9 +127,9 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
 
                     }
                 </div>
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="flex flex-col">
                     <div class="pb-4">
-                        <p class="uppercase text-white/60">{ footerColumnFour.title }</p>
+                        <p class="uppercase text-white/60 font-gt_america_mono">{ footerColumnFour.title }</p>
                     </div>
                     {
 
@@ -138,7 +138,7 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white text-lg group">
+                                        <li class="text-white text-lg group font-gt_america_regular">
                                             <a href={ item.data.link }>
                                                 <p>{ item.data.title }</p>
                                             </a>
@@ -152,15 +152,15 @@ import { frontmatter as footerColumnFour } from "../../../content/footer-titles/
 
                     }
                     <div class="pt-4">
-                        <p class="text-sm text-white/60">MojoTech is a 100% US-based software development agency.</p>
+                        <p class="text-sm text-white/60 font-gt_america_light">MojoTech is a 100% US-based software development agency.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="flex items-center justify-between py-6">
-            <div class="flex gap-4">
-                <p class="text-white">© 2023 MojoTech LLC. All rights reserved.</p>
-                <p class="text-white underline">Privacy Policy</p>
+        <section class="flex flex-col-reverse md:flex-row md:items-center justify-between gap-2 md:gap-0 py-6">
+            <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                <p class="text-white font-gt_america_light">&copy; { new Date().getFullYear() } MojoTech LLC. All rights reserved.</p>
+                <p class="text-white underline font-gt_america_light">Privacy Policy</p>
             </div>
             <!-- SOCIAL ICONS -->
             <SocialIcons />
