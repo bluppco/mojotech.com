@@ -5,9 +5,13 @@ import { motion, AnimatePresence } from "framer-motion"
 import H3JSX from "../../../atoms/jsx/H3"
 import ParagraphJSX from "../../../atoms/jsx/Paragraph"
 
+// IMPORT CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+
 const Accordion = ( props ) => {
 
     const { expand, updateExpand, value, index } = props
+
     const isOpen = index === expand
 
     return (
@@ -20,8 +24,8 @@ const Accordion = ( props ) => {
                 <div className="size-12">
                     <img
                         className="size-12"
-                        src={ value.src }
-                        alt={ value.alt }
+                        src={ CDN_LINK + value.cover + "?quality=" + IMAGE_QUALITY }
+                        alt={ value.title }
                     />
                 </div>
                 <div className="flex-wrap">

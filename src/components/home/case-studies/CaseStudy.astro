@@ -3,6 +3,9 @@
 import H3 from "../../../atoms/H3.astro"
 import Paragraph from "../../../atoms/Paragraph.astro"
 
+// IMPORT CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+
 const {
 
     src,
@@ -19,7 +22,7 @@ const {
 <div class={` ${ top_padding ? "pt-20" : "" } space-y-4`}>
     <div class="w-full aspect-square bg-zinc-200">
         <img
-            src={ src }
+            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
             alt={ alt }
             class="w-full h-full object-cover"
         />

@@ -1,13 +1,13 @@
 ---
 // IMPORT ASTRO ATOMS
 import Button from "../../atoms/Button.astro"
+
+const { data } = Astro.props
 ---
 
 <section>
 	<div class="flex justify-between items-center bg-mojo_zinc p-12">
-		<p class="text-2xl font-gt_america_regular">
-			Learn how we build better software
-		</p>
-		<Button>About Our Process</Button>
+		<p class="text-2xl font-gt_america_regular">{ data.title }</p>
+		<Button>{ data.button_title }</Button>
 	</div>
 </section>

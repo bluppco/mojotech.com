@@ -1,3 +1,6 @@
+// IMPORT CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+
 const Testimonials = ( props ) => {
 
     const {
@@ -12,11 +15,11 @@ const Testimonials = ( props ) => {
 
     return(
         <div className="space-y-10 bg-mojo_zinc p-20">
-            <p className="text-2xl font-gt_america_light">“{ review }”</p>
+            <p className="text-2xl font-gt_america_light text-left">“{ review }”</p>
             <div className="flex gap-10 items-center">
                 <div className="w-40 aspect-video bg-zinc-200">
                     <img
-                        src={ src }
+                        src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
                         alt={ alt }
                         className="w-40 aspect-video"
                     />

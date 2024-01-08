@@ -5,18 +5,7 @@ import H2 from "../../../atoms/H2.astro"
 // IMPORT ASTRO COMPONENTS
 import CaseStudy from "./CaseStudy.astro"
 
-const data = Array(4).fill({
-
-	src: "",
-	alt: "",
-	title: "Finance & Insurance",
-	description: "MojoTech solves the digital challenges plaguing banks and financial institutions with custom fintech solutions including Know Your Customer, cybersecurity, and compliance.",
-	href: "",
-	button_title: "Credit Karma Case Study",
-	aria_label: ""
-
-
-})
+const { data } = Astro.props
 ---
 
 <section class="space-y-20">
@@ -29,7 +18,7 @@ const data = Array(4).fill({
 				return(
 					<CaseStudy
 						top_padding={ index % 2 }
-						src={ item.src }
+						src={ item.cover }
 						alt={ item.alt }
 						title={ item.title }
 						description={ item.description }
