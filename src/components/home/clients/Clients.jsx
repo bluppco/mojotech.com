@@ -15,9 +15,9 @@ const Clients = ( props ) => {
 	const { clients, data } = props
 
 	return(
-		<section className="space-y-10 py-20">
+		<section className="space-y-4 md:space-y-10 py-10 md:py-20">
 			<H2JSX>{ clients.title }</H2JSX>
-			<p className="text-2xl font-gt_america_light">{ clients.description }</p>
+			<p className="text-xl md:text-2xl font-gt_america_light">{ clients.description }</p>
 			<Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ true }>
 				{
 
