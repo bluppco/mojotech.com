@@ -20,7 +20,7 @@ const Accordion = ( props ) => {
                 <motion.section
                     initial={ false }
                     onClick={() => updateExpand(isOpen ? false : index )}
-                    className="p-2 md:p-4 cursor-pointer flex items-center gap-4"
+                    className="p-2 md:p-4 cursor-pointer flex gap-4"
                 >
                     <div className="size-12">
                         <img
@@ -33,7 +33,7 @@ const Accordion = ( props ) => {
                         <H3JSX>{ value.title }</H3JSX>
                     </div>
                 </motion.section>
-                <div className="hidden md:block pl-40 pt-6">
+                <div className="hidden md:block pl-40 pt-2">
                     <AnimatePresence initial={ false }>
                         <motion.div
                             key="content"
@@ -53,10 +53,10 @@ const Accordion = ( props ) => {
                 <motion.section
                     initial={ false }
                     onClick={() => updateExpand(isOpen ? false : index )}
-                    className="p-2 md:p-4 cursor-pointer flex items-center gap-4"
+                    className="p-2 md:p-4 cursor-pointer flex gap-4"
                 >
                     <div className="w-8 md:w-12 aspect-square">
-                        <div className="w-8 md:w-12 aspect-square rounded-full flex justify-center items-center">
+                        <div className="w-8 md:w-12 aspect-square rounded-full flex justify-center">
                             <motion.img
                                 className={`${ isOpen ? "rotate-180": "rotate-0" } w-5 h-5 transition-all duration-300`}
                                 src={`${ isOpen ? "/icons/close.svg": "/icons/open.svg" }`}
