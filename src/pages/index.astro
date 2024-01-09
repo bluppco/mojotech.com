@@ -3,11 +3,15 @@ import { homeAPI } from "../api/home"
 
 const runtime = Astro.locals.runtime;
 const data = await homeAPI( runtime.env.ENVIRONMENT )
+
 const { home_data, services, work, advantages, testimonials, meta_tags } = data
 
 // IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
 import Container from "../layouts/Container.astro"
+
+// IMPORT CONSTANTS
+import { CDN_LINK } from "../constants/cdn"
 
 // IMPORT ASTRO COMPONENTS
 import Footer from "../components/common/footer/Footer.astro"
@@ -23,9 +27,7 @@ import OurProcess from "../components/home/OurProcess.astro"
 import Services from "../components/home/services/Services.astro"
 import ViewWork from "../components/home/ViewWork.astro"
 import Work from "../components/home/Work"
-
-// IMPORT CONSTANTS
-import { CDN_LINK } from "../constants/cdn"
+import Carousel from "../components/home/Carousel"
 ---
 <Layout
 	title={ meta_tags.title }
@@ -43,6 +45,13 @@ import { CDN_LINK } from "../constants/cdn"
 		carousel_two={ home_data.work_carousel_two }
 		carousel_three={ home_data.work_carousel_three }
 	/>
+	<!-- <Carousel
+		client:load
+		data={ home_data.work_carousel_one }
+		showArrows={ true }
+		autoPlay={ true }
+		showDots={ true }
+	/> -->
 	<Container>
 		<Services
 			data={ services }

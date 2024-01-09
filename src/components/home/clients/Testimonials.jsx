@@ -1,5 +1,6 @@
 // IMPORT CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+import CarouselProgressBar from "./CarouselProgressBar"
 
 const Testimonials = ( props ) => {
 
@@ -29,6 +30,15 @@ const Testimonials = ( props ) => {
                     <p className="text-lg text-emerald-600/50 font-gt_america_light text-left">{ author_designation }</p>
                 </div>
             </div>
+            <section className="flex gap-2">
+                <CarouselProgressBar />
+                <CarouselProgressBar />
+                <CarouselProgressBar />
+                <CarouselProgressBar />
+                <CarouselProgressBar />
+                <CarouselProgressBar />
+                <CarouselProgressBar />
+            </section>
         </div>
     )
 
