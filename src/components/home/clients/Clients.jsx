@@ -15,16 +15,16 @@ const Clients = ( props ) => {
 	const { clients, data } = props
 
 	return(
-		<section className="space-y-4 md:space-y-10 py-10 md:py-20">
+		<section className="space-y-4 md:space-y-10 py-10 md:py-20 relative">
 			<H2JSX>{ clients.title }</H2JSX>
 			<p className="text-xl md:text-2xl font-gt_america_light">{ clients.description }</p>
-			<Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ true }>
+			<div className="relative py-80">
 				{
 
 					data.map( ( item, index ) => {
 
 						return(
-							<div key={ "testimonial-" + index }>
+							<div key={ "testimonial-" + index } className="hover:opacity-0 transition-all duration-1000 absolute top-0">
 								<Testimonials
 									author_name={ item.name }
 									author_designation={ item.designation }
@@ -38,7 +38,7 @@ const Clients = ( props ) => {
 					})
 
 				}
-			</Carousel>
+			</div>
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10">
 				{
 
