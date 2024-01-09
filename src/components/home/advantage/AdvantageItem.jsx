@@ -90,8 +90,7 @@ const Accordion = ( props ) => {
 const AdvantageItem = ( props ) => {
 
     const { data } = props
-
-    const [ expand, updateExpand ] = useState( 0 )
+    const [ expand, updateExpand ] = useState( -1 )
 
     return (
         <section>
