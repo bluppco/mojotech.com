@@ -26,7 +26,7 @@ const Header = () => {
 							</div>
 						</a>
 						<nav className="">
-							<ul className="flex gap-4">
+							<ul className="flex gap-6">
 								<HeaderItem>Services</HeaderItem>
 								<HeaderItem>Process</HeaderItem>
 								<HeaderItem>Work</HeaderItem>
