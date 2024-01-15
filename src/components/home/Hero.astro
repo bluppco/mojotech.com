@@ -1,14 +1,19 @@
 ---
+// IMPORT ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
 // IMPORT ASTRO ATOMS
 import H1 from "../../atoms/H1.astro"
 import LargeButton from "../../atoms/LargeButton.astro"
 
 const { data } = Astro.props
 ---
-<section class="space-y-20 md:py-32">
-	<div class="space-y-6">
-		<H1>{ data.title }</H1>
-		<p class="text-xl md:text-2xl font-gt_america_light">{ data.description }</p>
-	</div>
-	<LargeButton>{ data.button_title }</LargeButton>
-</section>
+<Container>
+	<section class="space-y-20 md:py-32">
+		<div class="space-y-6">
+			<H1>{ data.title }</H1>
+			<p class="text-xl md:text-2xl font-gt_america_light">{ data.description }</p>
+		</div>
+		<LargeButton>{ data.button_title }</LargeButton>
+	</section>
+</Container>

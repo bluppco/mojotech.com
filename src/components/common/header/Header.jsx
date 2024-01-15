@@ -12,11 +12,11 @@ const Header = () => {
 
 	return(
 		<>
-			<header className="hidden md:flex bg-white items-center py-10">
+			<header className="hidden md:flex bg-white items-center h-36">
 				<ContainerJSX>
 					<div className="flex items-center">
 						<a href="/" aria-label="logo">
-							<div className="size-14 fixed top-16 left-20 z-50">
+							<div className="size-14 fixed top-20 left-20 z-50">
 								<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 58 50" class="group">
 									<g>
 										<polygon className="fill-[#00BA40] origin-center hover:rotate-[60deg] duration-300 transition-all" points="14.4933433 -3.05533376e-13 1.42108547e-14 24.9870871 14.4868122 49.9865029 43.4704051 49.9981467 57.9579048 24.9983884 43.4704051 -3.05533376e-13"></polygon>
@@ -26,7 +26,7 @@ const Header = () => {
 							</div>
 						</a>
 						<nav className="">
-							<ul className="flex gap-4">
+							<ul className="flex gap-6">
 								<HeaderItem>Services</HeaderItem>
 								<HeaderItem>Process</HeaderItem>
 								<HeaderItem>Work</HeaderItem>
@@ -34,7 +34,7 @@ const Header = () => {
 								<HeaderItem>Thoughts</HeaderItem>
 							</ul>
 						</nav>
-						<div className="fixed top-16 right-20 z-50">
+						<div className="fixed top-20 right-20 z-50">
 							<ButtonJSX>Contact</ButtonJSX>
 						</div>
 					</div>

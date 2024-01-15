@@ -2,16 +2,19 @@
 // IMPORT ASTRO ATOMS
 import H2 from "../../../atoms/H2.astro"
 
+// IMPORT ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
 // IMPORT ASTRO COMPONENTS
 import ServiceItem from "./ServiceItem.astro"
 
 const { services, data } = Astro.props
 ---
-<section>
-	<div>
+<Container>
+	<section>
 		<div class="space-y-10">
 			<H2>{ services.title }</H2>
-			<p class="text-2xl font-gt_america">{ services.description }</p>
+			<p class="text-xl md:text-2xl font-gt_america_light leading-normal">{ services.description }</p>
 		</div>
 		<div class="grid md:grid-cols-2 gap-x-8 gap-8 md:gap-y-16 py-10 md:py-20">
 			{
@@ -29,5 +32,5 @@ const { services, data } = Astro.props
 
 			}
 		</div>
-	</div>
-</section>
+	</section>
+</Container>

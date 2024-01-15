@@ -1,4 +1,7 @@
 ---
+// IMPORT ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
 // IMPORT ASTRO ATOMS
 import H2 from "../../../atoms/H2.astro"
 
@@ -7,29 +10,30 @@ import CaseStudy from "./CaseStudy.astro"
 
 const { data } = Astro.props
 ---
+<Container>
+	<section class="space-y-20 py-20">
+		<H2>Accelerating Industry Leaders.</H2>
+		<div class="grid md:grid-cols-2 gap-12">
+			{
 
-<section class="space-y-20">
-	<H2>Accelerating Industry Leaders.</H2>
-	<div class="grid md:grid-cols-2 gap-8">
-		{
+				data.map( ( item, index ) => {
 
-			data.map( ( item, index ) => {
+					return(
+						<CaseStudy
+							top_padding={ index % 2 }
+							src={ item.cover }
+							alt={ item.alt }
+							title={ item.title }
+							description={ item.description }
+							href={ item.href }
+							button_title={ item.button_title }
+							aria_label={ item.aria_label }
+						/>
+					)
 
-				return(
-					<CaseStudy
-						top_padding={ index % 2 }
-						src={ item.cover }
-						alt={ item.alt }
-						title={ item.title }
-						description={ item.description }
-						href={ item.href }
-						button_title={ item.button_title }
-						aria_label={ item.aria_label }
-					/>
-				)
+				})
 
-			})
-
-		}
-	</div>
-</section>
+			}
+		</div>
+	</section>
+</Container>
