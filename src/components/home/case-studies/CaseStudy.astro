@@ -23,23 +23,25 @@ const {
 
 const html = marked.parse( description )
 ---
-<div class={` ${ top_padding ? "md:pt-20" : "" } space-y-4`}>
-    <div class="w-full aspect-square bg-zinc-200">
+<div class={` ${ top_padding ? "md:pt-20" : "" } space-y-6`}>
+    <div class="w-full h-[540px] bg-zinc-200">
         <img
             src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
             alt={ alt }
             class="w-full h-full object-cover"
         />
     </div>
-    <H3>{ title }</H3>
-    <section set:html={ html } class="markdown" />
-    <div class="pt-4">
-        <a
-            href={ href }
-            class="text-lg underline hover:cursor-pointer"
-            aria-label={ aria_label }
-        >
-            { button_title }
-        </a>
+    <div>
+        <H3>{ title }</H3>
+        <section set:html={ html } class="markdown" />
+        <div class="pt-4">
+            <a
+                href={ href }
+                class="text-lg underline hover:cursor-pointer"
+                aria-label={ aria_label }
+            >
+                { button_title }
+            </a>
+        </div>
     </div>
 </div>

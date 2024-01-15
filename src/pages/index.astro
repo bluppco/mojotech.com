@@ -8,7 +8,6 @@ const { home_data, services, work, advantages, testimonials, meta_tags } = data
 
 // IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
-import Container from "../layouts/Container.astro"
 
 // IMPORT CONSTANTS
 import { CDN_LINK } from "../constants/cdn"
@@ -36,9 +35,7 @@ import Carousel from "../components/home/Carousel"
 >
 	<HeaderBanner />
 	<Header client:load />
-	<Container>
-		<Hero data={ home_data.hero } />
-	</Container>
+	<Hero data={ home_data.hero } />
 	<Work
 		client:load
 		carousel_one={ home_data.work_carousel_one }
@@ -52,25 +49,23 @@ import Carousel from "../components/home/Carousel"
 		autoPlay={ true }
 		showDots={ true }
 	/> -->
-	<Container>
-		<Services
-			data={ services }
-			services={ home_data.service }
-		/>
-		<MoreServices data={ home_data.more_services } />
-		<AcceleratingLeaders data={ work } />
-		<ViewWork data={ home_data.our_work } />
-		<Advantage
-			client:load
-			data={ advantages }
-			advantage={ home_data.advantage }
-		/>
-		<OurProcess data={ home_data.our_process } />
-		<Clients
-			client:load
-			clients ={ home_data.clients }
-			data ={ testimonials }
-		/>
-	</Container>
+	<Services
+		data={ services }
+		services={ home_data.service }
+	/>
+	<MoreServices data={ home_data.more_services } />
+	<Advantage
+		client:load
+		data={ advantages }
+		advantage={ home_data.advantage }
+	/>
+	<OurProcess data={ home_data.our_process } />
+	<AcceleratingLeaders data={ work } />
+	<ViewWork data={ home_data.our_work } />
+	<Clients
+		client:load
+		clients ={ home_data.clients }
+		data ={ testimonials }
+	/>
 	<Footer />
 </Layout>

@@ -1,13 +1,17 @@
 ---
+// IMPORT ASTRO LAYOUTS
+import Container from "../../layouts/Container.astro"
+
 // IMPORT ASTRO ATOMS
 import Button from "../../atoms/Button.astro"
 
 const { data } = Astro.props
 ---
-
-<section>
-	<div class="flex flex-wrap justify-between items-center bg-mojo_zinc p-6 md:p-12 gap-4 md:gap-0">
-		<p class="text-xl md:text-2xl font-gt_america_regular">{ data.title }</p>
-		<Button>{ data.button_title }</Button>
-	</div>
-</section>
+<Container>
+	<section>
+		<div class="flex flex-wrap justify-between items-center bg-mojo_zinc p-6 md:p-12 gap-4 md:gap-0">
+			<p class="text-xl md:text-2xl font-gt_america_regular">{ data.title }</p>
+			<Button>{ data.button_title }</Button>
+		</div>
+	</section>
+</Container>
