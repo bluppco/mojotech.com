@@ -22,7 +22,7 @@ const Clients = ( props ) => {
 			<section className="space-y-4 md:space-y-10 py-10 md:py-20 relative">
 				<H2JSX>{ clients.title }</H2JSX>
 				<p className="text-xl md:text-2xl font-gt_america_light">{ clients.description }</p>
-				<div className="relative h-[520px]">
+				<div className="relative h-[520px] w-full">
 					{
 
 						data.map( ( item, index ) => {
