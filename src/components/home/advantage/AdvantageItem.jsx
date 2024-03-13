@@ -1,6 +1,6 @@
 // IMPORT JSX ATOMS
-import H3JSX from "../../../atoms/jsx/H3"
-import ParagraphJSX from "../../../atoms/jsx/Paragraph"
+import H3JSX from "../../../atoms/headings/three/jsx"
+import ParagraphJSX from "../../../atoms/paragraphs/large/jsx"
 
 const AdvantageItem = ( props ) => {
 

@@ -2,7 +2,7 @@
 import ContainerJSX from "../../../layouts/Container"
 
 // IMPORT JSX ATOMS
-import ButtonJSX from "../../../atoms/jsx/Button"
+import ButtonJSX from "../../../atoms/buttons/primary/jsx"
 
 // IMPORT JSX COMPONENTS
 import HeaderItem from "./HeaderItem"

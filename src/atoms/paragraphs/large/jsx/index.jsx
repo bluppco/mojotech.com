@@ -1,4 +1,4 @@
-const ParagraphJSX = ( props ) => {
+const Paragraph = ( props ) => {
 
     return(
         <p className="text-lg font-gt_america_light">
@@ -9,4 +9,4 @@ const ParagraphJSX = ( props ) => {
 
 }
 
-export default ParagraphJSX
+export default Paragraph

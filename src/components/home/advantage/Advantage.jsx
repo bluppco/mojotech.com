@@ -2,7 +2,7 @@
 import ContainerJSX from "../../../layouts/Container"
 
 // IMPORT JSX ATOMS
-import H2JSX from "../../../atoms/jsx/H2"
+import H2JSX from "../../../atoms/headings/two/jsx"
 
 // IMPORT JSX COMPONENT
 import AdvantageItem from "./AdvantageItem"
