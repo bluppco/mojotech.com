@@ -1,7 +1,10 @@
 ---
-// IMPORT CUSTOM STYLES
-import "../styles/custom.css"
 
+// IMPORTS STYLES
+import "@/styles/custom.css"
+import "@/styles/globals.css"
+
+// GET ASTRO PROPS
 const {
 
     description,
@@ -29,11 +32,10 @@ const {
         <meta property="twitter:title" content={ title } />
         <meta property="twitter:description" content={ description } />
         <meta property="twitter:image" content={ image } />
-        <meta property="twitter:image" content={ image } />
         <meta property="article:publisher" content="" />
-        <link rel="icon" href="/logo/logo.svg">
+        <link rel="icon" href="/logo/logo.svg" />
     </head>
     <body>
-        <slot />
+        <slot/>
     </body>
 </html>

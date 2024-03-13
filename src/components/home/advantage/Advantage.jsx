@@ -1,5 +1,5 @@
 // IMPORT JSX LAYOUTS
-import ContainerJSX from "../../../layouts/Container"
+import ContainerJSX from "../../../layouts/container/jsx"
 
 // IMPORT JSX ATOMS
 import H2JSX from "../../../atoms/headings/two/jsx"
