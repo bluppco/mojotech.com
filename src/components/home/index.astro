@@ -1,0 +1,83 @@
+---
+
+// IMPORTS COMMON ASTRO COMPONENTS
+import Footer from "@/components/common/footer/Footer.astro"
+import Header from "@/components/common/header/Header.jsx"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import AcceleratingLeaders from "@/components/home/case-studies/AcceleratingLeaders.astro"
+import Advantage from "@/components/home/advantage/Advantage"
+import Carousel from "@/components/home/Carousel"
+import Clients from "@/components/home/clients/Clients"
+import Hero from "@/components/home/Hero.astro"
+import MoreServices from "@/components/home/MoreServices.astro"
+import OurProcess from "@/components/home/OurProcess.astro"
+import Services from "@/components/home/services/Services.astro"
+import ViewWork from "@/components/home/ViewWork.astro"
+import Work from "@/components/home/Work"
+
+// GET ASTRO PROPS
+const {
+
+    advantages,
+    CDN,
+    ENVIRONMENT,
+    home_data,
+    PROJECT,
+    services,
+    testimonials,
+    work
+
+} = Astro.props
+
+---
+<HeaderBanner
+    ENVIRONMENT={ ENVIRONMENT }
+/>
+<Header
+    client:load
+/>
+<Hero
+    data={ home_data.hero }
+/>
+<Work
+    carousel_one={ home_data.work_carousel_one }
+    carousel_three={ home_data.work_carousel_three }
+    carousel_two={ home_data.work_carousel_two }
+    client:load
+/>
+<!-- <Carousel
+    client:load
+    data={ home_data.work_carousel_one }
+    showArrows={ true }
+    autoPlay={ true }
+    showDots={ true }
+/> -->
+<Services
+    data={ services }
+    services={ home_data.service }
+/>
+<MoreServices
+    data={ home_data.more_services }
+/>
+<Advantage
+    advantage={ home_data.advantage }
+    client:load
+    data={ advantages }
+/>
+<OurProcess
+    data={ home_data.our_process }
+/>
+<AcceleratingLeaders
+    data={ work }
+/>
+<ViewWork
+    data={ home_data.our_work }
+/>
+<Clients
+    client:load
+    clients ={ home_data.clients }
+    data ={ testimonials }
+/>
+<Footer />
