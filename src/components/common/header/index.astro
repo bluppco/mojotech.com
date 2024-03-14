@@ -1,0 +1,15 @@
+---
+
+// IMPORTS JSX COMPONENTS
+import Header from "@/components/common/header/jsx/index.jsx"
+
+// IMPORTS HEADER COLLECTION
+import { getCollection } from "astro:content"
+let header_data = await getCollection("header")
+header_data = header_data.sort((a, b) => a.data.order - b.data.order)
+
+---
+<Header
+    client:load
+    header_data={ header_data }
+/>

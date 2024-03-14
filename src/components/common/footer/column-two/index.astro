@@ -1,0 +1,40 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import Heading from "@/atoms/footer/heading/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    data,
+    title
+
+} = Astro.props
+
+---
+<div class="flex flex-col">
+    <div class="pb-2">
+        <Heading>{ title }</Heading>
+    </div>
+    {
+
+        data.map( ( item ) => {
+
+            return (
+                <div class="flex items-center gap-4">
+                    <ul class="py-1">
+                        <li class="text-white text-lg group font-gt_america_regular">
+                            <Link href={ item.data.link } aria_label={ item.data.title }>
+                               { item.data.title }
+                            </Link>
+                            <div class="w-0 bg-white group-hover:w-full h-[1px] transition-width duration-200 ease-in" />
+                        </li>
+                    </ul>
+                </div>
+            )
+
+        })
+
+    }
+</div>

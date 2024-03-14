@@ -1,71 +1,51 @@
 ---
-import { homeAPI } from "../api/home"
 
-const runtime = Astro.locals.runtime;
-const data = await homeAPI( runtime.env.ENVIRONMENT )
+// RUNTIME
+const runtime = Astro.locals.runtime
+const {
 
-const { home_data, services, work, advantages, testimonials, meta_tags } = data
+    CDN,
+    ENDPOINT,
+    ENVIRONMENT,
+    PROJECT
 
-// IMPORT ASTRO LAYOUTS
-import Layout from "../layouts/Layout.astro"
+} = runtime.env
+const data = await homeAPI( ENVIRONMENT, ENDPOINT )
 
-// IMPORT CONSTANTS
-import { CDN_LINK } from "../constants/cdn"
+// API
+import { homeAPI } from "@/api/home/index.js"
 
-// IMPORT ASTRO COMPONENTS
-import Footer from "../components/common/footer/Footer.astro"
-import Header from "../components/common/header/Header.jsx"
-import HeaderBanner from "../components/common/HeaderBanner.astro"
+const {
 
-import AcceleratingLeaders from "../components/home/case-studies/AcceleratingLeaders.astro"
-import Advantage from "../components/home/advantage/Advantage"
-import Clients from "../components/home/clients/Clients"
-import Hero from "../components/home/Hero.astro"
-import MoreServices from "../components/home/MoreServices.astro"
-import OurProcess from "../components/home/OurProcess.astro"
-import Services from "../components/home/services/Services.astro"
-import ViewWork from "../components/home/ViewWork.astro"
-import Work from "../components/home/Work"
-import Carousel from "../components/home/Carousel"
+	advantages,
+	home_data,
+	meta_tags,
+	services,
+	testimonials,
+	work
+
+} = data
+
+// IMPORTS ASTRO LAYOUTS
+import Layout from "@/layouts/layout/index.astro"
+
+// IMPORTS HOME COMPONENT
+import Home from "@/components/home/index.astro"
+
 ---
 <Layout
-	title={ meta_tags.title }
 	description={ meta_tags.description }
-	image={ CDN_LINK + meta_tags.cover }
+	image={ CDN + meta_tags.cover }
+	title={ meta_tags.title }
 >
-	<HeaderBanner />
-	<Header client:load />
-	<Hero data={ home_data.hero } />
-	<Work
-		client:load
-		carousel_one={ home_data.work_carousel_one }
-		carousel_two={ home_data.work_carousel_two }
-		carousel_three={ home_data.work_carousel_three }
+	<Home
+		advantages={ advantages }
+		CDN={ CDN }
+		ENVIRONMENT={ ENVIRONMENT }
+		home_data={ home_data }
+		PROJECT={ PROJECT }
+		services={ services }
+		testimonials={ testimonials }
+		work={ work }
 	/>
-	<!-- <Carousel
-		client:load
-		data={ home_data.work_carousel_one }
-		showArrows={ true }
-		autoPlay={ true }
-		showDots={ true }
-	/> -->
-	<Services
-		data={ services }
-		services={ home_data.service }
-	/>
-	<MoreServices data={ home_data.more_services } />
-	<Advantage
-		client:load
-		data={ advantages }
-		advantage={ home_data.advantage }
-	/>
-	<OurProcess data={ home_data.our_process } />
-	<AcceleratingLeaders data={ work } />
-	<ViewWork data={ home_data.our_work } />
-	<Clients
-		client:load
-		clients ={ home_data.clients }
-		data ={ testimonials }
-	/>
-	<Footer />
 </Layout>

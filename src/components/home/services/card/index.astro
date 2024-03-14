@@ -1,0 +1,22 @@
+---
+
+// IMPORT ASTRO ATOMS
+import HeadingThree from "@/atoms/headings/three/index.astro"
+
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// GET ASTRO PROPS
+const {
+
+    description,
+    title
+
+} = Astro.props
+
+const html = marked.parse( description )
+---
+<div class="md:space-y-2">
+    <HeadingThree>{ title }</HeadingThree>
+    <section set:html={ html } class="markdown" />
+</div>
