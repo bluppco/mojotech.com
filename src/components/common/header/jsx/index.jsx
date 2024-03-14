@@ -18,7 +18,7 @@ const Header = ( props ) => {
 
 	return(
 		<>
-			<header className="hidden md:flex bg-white items-center h-36">
+			<header className="hidden md:flex bg-white items-center md:h-28 mac:h-36 md:mt-14 mac:mt-9">
 				<Container>
 					<div className="flex items-center h-full">
 						<a href="/" aria-label="logo">
