@@ -1,0 +1,78 @@
+---
+
+// IMPORTS COMMON ASTRO COMPONENTS
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/index.astro"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import CaseStudies from "@/components/home/case-studies/index.astro"
+import Advantage from "@/components/home/advantage/index.astro"
+import Clients from "@/components/home/clients/index.astro"
+import Hero from "@/components/home/hero/index.astro"
+import MoreServices from "@/components/home/more-services/index.astro"
+import OurProcess from "@/components/home/our-process/index.astro"
+import Services from "@/components/home/services/index.astro"
+import ViewWork from "@/components/home/view-work/index.astro"
+import Work from "@/components/home/work/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    advantages,
+    CDN,
+    ENVIRONMENT,
+    home_data,
+    PROJECT,
+    services,
+    testimonials,
+    work
+
+} = Astro.props
+
+---
+<HeaderBanner
+    ENVIRONMENT={ ENVIRONMENT }
+/>
+<Header />
+<Hero
+    data={ home_data.hero }
+/>
+<Work
+    carousel_one={ home_data.work_carousel_one }
+    carousel_three={ home_data.work_carousel_three }
+    carousel_two={ home_data.work_carousel_two }
+    CDN={ CDN }
+    PROJECT={ PROJECT }
+/>
+<Services
+    data={ services }
+    services={ home_data.service }
+/>
+<MoreServices
+    data={ home_data.more_services }
+/>
+<Advantage
+    advantage={ home_data.advantage }
+    CDN={ CDN }
+    data={ advantages }
+    PROJECT={ PROJECT }
+/>
+<OurProcess
+    data={ home_data.our_process }
+/>
+<CaseStudies
+    CDN={ CDN }
+    data={ work }
+    PROJECT={ PROJECT }
+/>
+<ViewWork
+    data={ home_data.our_work }
+/>
+<Clients
+    CDN={ CDN }
+    clients={ home_data.clients }
+    data={ testimonials }
+    PROJECT={ PROJECT }
+/>
+<Footer />

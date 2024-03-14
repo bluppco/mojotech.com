@@ -1,17 +1,51 @@
 ---
-import { endpointFetch } from "../functions/endpoint"
 
-const runtime = Astro.locals.runtime;
-const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+// RUNTIME
+const runtime = Astro.locals.runtime
+const {
 
-// NETWORK CALL TO GET DATA
-const network_data = await fetch( endpoint + "/home" )
-const data_json = await network_data.json()
+    CDN,
+    ENDPOINT,
+    ENVIRONMENT,
+    PROJECT
 
-// IMPORT ASTRO COMPONENTS
-import Layout from "../layouts/Layout.astro"
-import HeaderBanner from "../components/common/HeaderBanner.astro"
+} = runtime.env
+const data = await homeAPI( ENVIRONMENT, ENDPOINT )
+
+// API
+import { homeAPI } from "@/api/home/index.js"
+
+const {
+
+	advantages,
+	home_data,
+	meta_tags,
+	services,
+	testimonials,
+	work
+
+} = data
+
+// IMPORTS ASTRO LAYOUTS
+import Layout from "@/layouts/layout/index.astro"
+
+// IMPORTS HOME COMPONENT
+import Home from "@/components/home/index.astro"
+
 ---
-<Layout>
-	<HeaderBanner />
+<Layout
+	description={ meta_tags.description }
+	image={ CDN + meta_tags.cover }
+	title={ meta_tags.title }
+>
+	<Home
+		advantages={ advantages }
+		CDN={ CDN }
+		ENVIRONMENT={ ENVIRONMENT }
+		home_data={ home_data }
+		PROJECT={ PROJECT }
+		services={ services }
+		testimonials={ testimonials }
+		work={ work }
+	/>
 </Layout>

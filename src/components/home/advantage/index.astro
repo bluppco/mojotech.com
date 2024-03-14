@@ -1,0 +1,23 @@
+---
+
+// IMPORTS JSX COMPONENTS
+import Advantage from "@/components/home/advantage/jsx/index.jsx"
+
+// GET ASTRO PROPS
+const {
+
+    advantage,
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<Advantage
+    advantage={ advantage }
+    CDN={ CDN }
+    client:load
+    data={ data }
+    PROJECT={ PROJECT }
+/>

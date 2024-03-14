@@ -1,0 +1,51 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import CaseStudyCard from "@/components/home/case-studies/card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+	CDN,
+	data,
+	PROJECT
+
+} = Astro.props
+
+---
+<Container>
+	<section class="space-y-4 md:space-y-20 py-10 md:py-20">
+		<HeadingTwo>Accelerating Industry Leaders.</HeadingTwo>
+		<div class="grid md:grid-cols-2 gap-8 md:gap-12">
+			{
+
+				data.map( ( item, index ) => {
+
+					return(
+						<CaseStudyCard
+							alternative_text={ item.title }
+							aria_label={ item.title }
+							button_link={ item.button_link }
+							button_title={ item.button_title }
+							CDN={ CDN }
+							description={ item.description }
+							href={ item.href }
+							PROJECT={ PROJECT }
+							source={ item.cover }
+							title={ item.title }
+							top_padding={ index % 2 }
+						/>
+					)
+
+				})
+
+			}
+		</div>
+	</section>
+</Container>

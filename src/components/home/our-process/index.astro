@@ -1,0 +1,21 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import ButtonPrimary from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+// GET ASTRO PROPS
+const { data } = Astro.props
+
+---
+<Container>
+	<div class="flex flex-wrap justify-between items-center bg-mojo_zinc p-6 md:p-12 gap-4 md:gap-0">
+		<p class="text-xl md:text-2xl font-gt_america_regular">{ data.title }</p>
+		<Link href={ data.button_link } aria_label={ data.button_title }>
+			<ButtonPrimary>{ data.button_title }</ButtonPrimary>
+		</Link>
+	</div>
+</Container>

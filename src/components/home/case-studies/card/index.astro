@@ -1,0 +1,59 @@
+---
+
+// IMPORT ASTRO ATOMS
+import HeadingThree from "@/atoms/headings/three/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// GET ASTRO PROPS
+const {
+
+    alternative_text,
+    aria_label,
+    button_link,
+    button_title,
+    CDN,
+    description,
+    href,
+    PROJECT,
+    source,
+    title,
+    top_padding
+
+} = Astro.props
+
+const html = marked.parse( description )
+
+---
+<div class={` ${ top_padding ? "md:pt-20" : "" } space-y-6`}>
+    <div class="w-full h-[540px] bg-zinc-200 hidden md:block">
+        <Picture
+            alternative_text={ alternative_text }
+            CDN={ CDN }
+            image_width="600"
+            PROJECT={ PROJECT }
+            source={ source }
+        />
+    </div>
+    <div class="w-full h-96 bg-zinc-200 md:hidden">
+        <img
+            alt={ alternative_text }
+            src={ CDN + PROJECT + "/" + source + "?quality=80&width=600" }
+        />
+    </div>
+    <div class="pt-12 md:pt-0">
+        <HeadingThree>{ title }</HeadingThree>
+        <section set:html={ html } class="markdown" />
+        <div class="md:pt-4">
+            <a
+                href={ button_link }
+                class="text-lg underline hover:cursor-pointer"
+                aria-label={ aria_label }
+            >
+                { button_title }
+            </a>
+        </div>
+    </div>
+</div>
