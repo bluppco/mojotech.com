@@ -21,6 +21,7 @@ export const homeAPI = async ( ENVIRONMENT, ENDPOINT ) => {
         our_process : "",
         trusted_partner : "",
         clients : "",
+        case_studies : ""
 
     }
     home.map( ( data ) => {
@@ -49,6 +50,8 @@ export const homeAPI = async ( ENVIRONMENT, ENDPOINT ) => {
             home_data.trusted_partner = data
         else if ( data.slug === "clients" )
             home_data.clients = data
+        else if ( data.slug === "case-studies" )
+            home_data.case_studies = data
 
     })
 
