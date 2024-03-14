@@ -6,7 +6,7 @@ import Testimonials from "../testimonials/jsx/index.jsx"
 
 // IMPORTS ATOMS
 import HeadingTwo from "@/atoms/headings/two/jsx/index.jsx"
-import PictureContain from "@/atoms/picture/jsx/contain/index.jsx"
+import PictureContain from "@/atoms/picture/contain/jsx/index.jsx"
 
 const Clients = ( props ) => {
 

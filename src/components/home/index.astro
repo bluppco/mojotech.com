@@ -10,7 +10,7 @@ import AcceleratingLeaders from "@/components/home/case-studies/index.astro"
 import Advantage from "@/components/home/advantage/index.astro"
 import Carousel from "@/components/home/Carousel"
 import Clients from "@/components/home/clients/index.astro"
-import Hero from "@/components/home/index.astro"
+import Hero from "@/components/home/hero/index.astro"
 import MoreServices from "@/components/home/more-services/index.astro"
 import OurProcess from "@/components/home/our-process/index.astro"
 import Services from "@/components/home/services/index.astro"
@@ -35,9 +35,7 @@ const {
 <HeaderBanner
     ENVIRONMENT={ ENVIRONMENT }
 />
-<Header
-    client:load
-/>
+<Header />
 <Hero
     data={ home_data.hero }
 />
