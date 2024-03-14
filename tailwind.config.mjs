@@ -44,7 +44,8 @@ module.exports = {
 			colors: {
 				"mojo_black": "#14111D",
 				"mojo_dark_green": "#1E4D32",
-				"mojo_zinc": "#F0F0F0"
+				"mojo_zinc": "#F0F0F0",
+				"mojo_green": "#00BA40"
 			}
 		},
 	},

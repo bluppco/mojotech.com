@@ -17,7 +17,7 @@ const Header = () => {
 		<>
 			<header className="hidden md:flex bg-white items-center h-36">
 				<Container>
-					<div className="flex items-center">
+					<div className="flex items-center h-full">
 						<a href="/" aria-label="logo">
 							<div className="size-14 fixed top-20 left-20 z-50">
 								<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 58 50" class="group">

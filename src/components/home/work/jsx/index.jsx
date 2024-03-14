@@ -29,7 +29,7 @@ const Work = ( props ) => {
                                 carousel_one.images.map( ( value, index ) => {
                                     return (
                                         <div key={ "carousel-one-" + index } className="relative w-full overflow-hidden">
-                                            <div className="w-20 md:w-full h-24 md:h-60 bg-zinc-300 overflow-hidden">
+                                            <div className="w-20 md:w-full h-24 md:h-60 bg-zinc-600 overflow-hidden">
                                                 <Picture
                                                     alternative_text=""
                                                     CDN={ CDN }

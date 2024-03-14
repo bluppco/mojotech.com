@@ -20,6 +20,9 @@ const Clients = ( props ) => {
 
 	} = props
 
+	// SORTS THE IMAGES
+	const images = clients.images.sort( (a,b) => { return a.order - b.order })
+
 	return(
 		<Container>
 			<section className="space-y-4 md:space-y-10 py-10 md:py-20 relative">
@@ -51,10 +54,10 @@ const Clients = ( props ) => {
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10">
 					{
 
-						clients.images.map( ( item, index ) => {
+						images.map( ( item, index ) => {
 
 							return(
-								<div className="w-40 aspect-video" key={ "clients-logo-" + index }>
+								<div className="w-32 aspect-video" key={ "clients-logo-" + index }>
 									<PictureContain
 										alternative_text=""
 										CDN={ CDN }
