@@ -9,7 +9,10 @@ import { motion, AnimatePresence } from "framer-motion"
 // IMPORTS REACT
 import { useState } from "react"
 
-const Header = () => {
+const Header = ( props ) => {
+
+    // GET PROPS
+    const { header_data } = props
 
     const [ isOpen, updateOpen ] = useState( false )
     return (
@@ -65,13 +68,17 @@ const Header = () => {
                     >
                         <div className="flex flex-col gap-1 items-center justify-center h-full z-10">
                             <ul className="flex flex-col gap-8 text-xl text-center">
-                                <ListItem>Home</ListItem>
-                                <ListItem>Services</ListItem>
-                                <ListItem>Process</ListItem>
-                                <ListItem>Work</ListItem>
-                                <ListItem>About</ListItem>
-                                <ListItem>Thoughts</ListItem>
-                                <ListItem>We're Hiring!</ListItem>
+                                {
+
+                                    header_data.map( ( value ) => {
+
+                                        return(
+                                            <ListItem href={ value.data.slug }>{ value.data.title }</ListItem>
+                                        )
+
+                                    })
+
+                                }
                             </ul>
                         </div>
                     </motion.div>

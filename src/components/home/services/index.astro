@@ -20,8 +20,13 @@ const {
 ---
 <Container>
 	<div class="space-y-10">
-		<HeadingTwo>{ services.title }</HeadingTwo>
-		<p class="text-xl md:text-2xl font-gt_america_light leading-normal">{ services.description }</p>
+		{
+
+			false &&
+			<HeadingTwo>{ services.title }</HeadingTwo>
+
+		}
+		<p class="text-xl md:text-2xl font-gt_america_light leading-normal md:leading-normal">{ services.description }</p>
 	</div>
 	<div class="grid md:grid-cols-2 gap-x-8 gap-8 md:gap-y-16 py-10 md:py-20">
 		{

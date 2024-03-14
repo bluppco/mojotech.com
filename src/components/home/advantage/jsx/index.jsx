@@ -13,7 +13,9 @@ const Advantage = ( props ) => {
 	const {
 
 		advantage,
-		data
+		CDN,
+		data,
+		PROJECT
 
 	} = props
 
@@ -29,7 +31,10 @@ const Advantage = ( props ) => {
 							return(
 								<div key={ index }>
 									<AdvantageCard
+										CDN={ CDN }
 										description={ value.description }
+										PROJECT={ PROJECT }
+										source={ value.cover }
 										title={ value.title }
 									/>
 								</div>

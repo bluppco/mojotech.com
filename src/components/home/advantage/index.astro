@@ -7,13 +7,17 @@ import Advantage from "@/components/home/advantage/jsx/index.jsx"
 const {
 
     advantage,
-    data
+    CDN,
+    data,
+    PROJECT
 
 } = Astro.props
 
 ---
 <Advantage
     advantage={ advantage }
+    CDN={ CDN }
     client:load
     data={ data }
+    PROJECT={ PROJECT }
 />

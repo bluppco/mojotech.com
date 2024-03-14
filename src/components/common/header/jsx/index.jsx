@@ -11,7 +11,10 @@ import ListItem from "@/atoms/header/list-item/index.jsx"
 import ButtonPrimary from "@/atoms/buttons/primary/jsx/index.jsx"
 import Link from "@/atoms/links/jsx/index.jsx"
 
-const Header = () => {
+const Header = ( props ) => {
+
+	// GET PROPS
+	const { header_data } = props
 
 	return(
 		<>
@@ -29,12 +32,18 @@ const Header = () => {
 							</div>
 						</a>
 						<nav>
-							<ul className="flex gap-6">
-								<ListItem>Strategy</ListItem>
-								<ListItem>Engineering</ListItem>
-								<ListItem>Design</ListItem>
-								<ListItem>Results</ListItem>
-								<ListItem>About</ListItem>
+							<ul className="flex gap-6 items-center">
+								{
+
+									header_data.map( ( value ) => {
+
+										return(
+											<ListItem href={ value.data.slug }>{ value.data.title }</ListItem>
+										)
+
+									})
+
+								}
 							</ul>
 						</nav>
 						<div className="fixed top-20 right-20 z-50">
@@ -45,7 +54,9 @@ const Header = () => {
 					</div>
 				</Container>
 			</header>
-			<HeaderMobile />
+			<HeaderMobile
+				header_data={ header_data }
+			/>
 		</>
 	)
 

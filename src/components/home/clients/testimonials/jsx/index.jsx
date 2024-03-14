@@ -33,15 +33,20 @@ const Testimonials = ( props ) => {
                     <p className="text-lg text-emerald-600/50 font-gt_america_light text-left">{ author_designation }</p>
                 </div>
             </div>
-            <section className="flex gap-2">
-                <CarouselProgressBar />
-                <CarouselProgressBar />
-                <CarouselProgressBar />
-                <CarouselProgressBar />
-                <CarouselProgressBar />
-                <CarouselProgressBar />
-                <CarouselProgressBar />
-            </section>
+            {
+
+                false &&
+                <section className="flex gap-2">
+                    <CarouselProgressBar />
+                    <CarouselProgressBar />
+                    <CarouselProgressBar />
+                    <CarouselProgressBar />
+                    <CarouselProgressBar />
+                    <CarouselProgressBar />
+                    <CarouselProgressBar />
+                </section>
+
+            }
         </div>
     )
 
