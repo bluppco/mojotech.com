@@ -1,19 +1,22 @@
-// IMPORT JSX LAYOUTS
-import ContainerJSX from "../../../layouts/container/jsx"
+// IMPORTS LAYOUTS
+import Container from "@/layouts/container/jsx/index.jsx"
 
-// IMPORT JSX ATOMS
-import ButtonJSX from "../../../atoms/buttons/primary/jsx"
+// IMPORTS COMPONENTS
+import HeaderMobile from "@/components/common/header/mobile/index.jsx"
 
-// IMPORT JSX COMPONENTS
-import HeaderItem from "./HeaderItem"
-import MobileHeader from "../header/MobileHeader"
+// IMPORTS ATOMS
+import ListItem from "@/atoms/header/list-item/index.jsx"
+
+// IMPORTS ATOMS
+import ButtonPrimary from "@/atoms/buttons/primary/jsx/index.jsx"
+import Link from "@/atoms/links/jsx/index.jsx"
 
 const Header = () => {
 
 	return(
 		<>
 			<header className="hidden md:flex bg-white items-center h-36">
-				<ContainerJSX>
+				<Container>
 					<div className="flex items-center">
 						<a href="/" aria-label="logo">
 							<div className="size-14 fixed top-20 left-20 z-50">
@@ -25,22 +28,24 @@ const Header = () => {
 								</svg>
 							</div>
 						</a>
-						<nav className="">
+						<nav>
 							<ul className="flex gap-6">
-								<HeaderItem>Services</HeaderItem>
-								<HeaderItem>Process</HeaderItem>
-								<HeaderItem>Work</HeaderItem>
-								<HeaderItem>About</HeaderItem>
-								<HeaderItem>Thoughts</HeaderItem>
+								<ListItem>Strategy</ListItem>
+								<ListItem>Engineering</ListItem>
+								<ListItem>Design</ListItem>
+								<ListItem>Results</ListItem>
+								<ListItem>About</ListItem>
 							</ul>
 						</nav>
 						<div className="fixed top-20 right-20 z-50">
-							<ButtonJSX>Contact</ButtonJSX>
+							<Link href="/contact" aria_label="Contact">
+								<ButtonPrimary>Contact</ButtonPrimary>
+							</Link>
 						</div>
 					</div>
-				</ContainerJSX>
+				</Container>
 			</header>
-			<MobileHeader />
+			<HeaderMobile />
 		</>
 	)
 
