@@ -12,6 +12,7 @@ import HeadingTwo from "@/atoms/headings/two/index.astro"
 // GET ASTRO PROPS
 const {
 
+	case_studies,
 	CDN,
 	data,
 	PROJECT
@@ -21,7 +22,7 @@ const {
 ---
 <Container>
 	<section class="space-y-4 md:space-y-20 py-10 md:py-20">
-		<HeadingTwo>Accelerating Industry Leaders.</HeadingTwo>
+		<HeadingTwo>{ case_studies.title }</HeadingTwo>
 		<div class="grid md:grid-cols-2 gap-8 md:gap-12">
 			{
 

@@ -17,7 +17,7 @@ const PictureContain = ( props ) => {
             <source media="(max-width: 640px)" srcSet={ CDN + PROJECT + "/" + source + "?height=400&quality=80" } />
             <img
                 alt={ alternative_text }
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 src={ CDN + PROJECT + "/" +  source + "?quality=80" + "&width=" + image_width }
             />
         </picture>

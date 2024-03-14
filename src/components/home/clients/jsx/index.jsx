@@ -51,7 +51,7 @@ const Clients = ( props ) => {
 
 					}
 				</div>
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-40 md:pt-10">
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:pt-10">
 					{
 
 						images.map( ( item, index ) => {
@@ -61,6 +61,7 @@ const Clients = ( props ) => {
 									<PictureContain
 										alternative_text=""
 										CDN={ CDN }
+										image_width="120"
 										PROJECT={ PROJECT }
 										source={ item.file }
 									/>

@@ -18,12 +18,15 @@ const Testimonials = ( props ) => {
 
     return(
         <div className="space-y-10 bg-mojo_zinc px-4 py-10 md:p-20">
-            <p className="text-xl md:text-2xl font-gt_america_light text-left">“{ review }”</p>
+            <div className="h-60 md:h-40">
+                <p className="text-xl md:text-2xl font-gt_america_light text-left">“{ review }”</p>
+            </div>
             <div className="flex flex-col md:flex-row gap-2 md:gap-10 md:items-center">
                 <div className="w-40 aspect-video">
                     <PictureContain
                         alternative_text={ alternative_text }
                         CDN={ CDN }
+                        image_width="120"
                         PROJECT={ PROJECT }
                         source={ source }
                     />

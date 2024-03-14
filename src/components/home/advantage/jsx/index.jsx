@@ -23,7 +23,7 @@ const Advantage = ( props ) => {
 		<Container>
 			<section className="space-y-4 md:space-y-20 py-20">
 				<HeadingTwo>{ advantage.title }</HeadingTwo>
-				<div class="grid md:grid-cols-2 gap-x-8 gap-8 md:gap-y-16">
+				<div className="grid md:grid-cols-2 gap-x-8 gap-8 md:gap-y-16">
 					{
 
 						data.map( ( value, index ) => {

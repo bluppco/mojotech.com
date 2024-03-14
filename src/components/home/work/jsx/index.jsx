@@ -34,7 +34,7 @@ const Work = ( props ) => {
                                                 <Picture
                                                     alternative_text=""
                                                     CDN={ CDN }
-                                                    image_width=""
+                                                    image_width="280"
                                                     PROJECT={ PROJECT }
                                                     source={ value.file }
                                                 />
@@ -57,7 +57,7 @@ const Work = ( props ) => {
                                                 <Picture
                                                     alternative_text=""
                                                     CDN={ CDN }
-                                                    image_width=""
+                                                    image_width="600"
                                                     PROJECT={ PROJECT }
                                                     source={ value.file }
                                                 />
@@ -81,7 +81,7 @@ const Work = ( props ) => {
                                             <Picture
                                                 alternative_text=""
                                                 CDN={ CDN }
-                                                image_width=""
+                                                image_width="880"
                                                 PROJECT={ PROJECT }
                                                 source={ value.file }
                                             />
