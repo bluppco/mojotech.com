@@ -1,0 +1,42 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingTwo from "@/atoms/Headings/two/index.astro"
+
+// IMPORT ASTRO COMPONENTS
+import ServiceCard from "@/components/home/services/card/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+	data,
+	services
+
+} = Astro.props
+
+---
+<Container>
+	<div class="space-y-10">
+		<HeadingTwo>{ services.title }</HeadingTwo>
+		<p class="text-xl md:text-2xl font-gt_america_light leading-normal">{ services.description }</p>
+	</div>
+	<div class="grid md:grid-cols-2 gap-x-8 gap-8 md:gap-y-16 py-10 md:py-20">
+		{
+
+			data.map( ( item ) => {
+
+				return(
+					<ServiceCard
+						description={ item.description }
+						title={ item.title }
+					/>
+				)
+
+			})
+
+		}
+	</div>
+</Container>

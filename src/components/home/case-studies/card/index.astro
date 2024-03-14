@@ -1,42 +1,47 @@
 ---
-import { marked } from "marked"
 
 // IMPORT ASTRO ATOMS
-import H3 from "../../../atoms/H3.astro"
-import Paragraph from "../../../atoms/Paragraph.astro"
+import HeadingThree from "@/atoms/headings/three/index.astro"
+import Picture from "@/atoms/picture/index.astro"
 
-// IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+// IMPORTS MARKED
+import { marked } from "marked"
 
+// GET ASTRO PROPS
 const {
 
-    src,
-    alt,
-    title,
+    alternative_text,
+    aria_label,
+    button_link,
+    button_title,
+    CDN,
     description,
     href,
-    button_title,
-    aria_label,
+    PROJECT,
+    source,
+    title,
     top_padding
 
 } = Astro.props
 
 const html = marked.parse( description )
+
 ---
 <div class={` ${ top_padding ? "md:pt-20" : "" } space-y-6`}>
     <div class="w-full h-[540px] bg-zinc-200">
-        <img
-            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
-            alt={ alt }
-            class="w-full h-full object-cover"
+        <Picture
+            alternative_text={ alternative_text }
+            CDN={ CDN }
+            PROJECT={ PROJECT }
+            source={ source }
         />
     </div>
     <div>
-        <H3>{ title }</H3>
+        <HeadingThree>{ title }</HeadingThree>
         <section set:html={ html } class="markdown" />
         <div class="pt-4">
             <a
-                href={ href }
+                href={ button_link }
                 class="text-lg underline hover:cursor-pointer"
                 aria-label={ aria_label }
             >

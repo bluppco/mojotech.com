@@ -1,16 +1,18 @@
-// IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
-import CarouselProgressBar from "./CarouselProgressBar"
+// IMPORTS ATOMS
+import CarouselProgressBar from "@/atoms/home/clients/testimonials/carousel-progress-bar/index.jsx"
+import PictureContain from "@/atoms/picture/contain/jsx/index.jsx"
 
 const Testimonials = ( props ) => {
 
     const {
 
-        author_name,
+        alternative_text,
         author_designation,
-        src,
-        alt,
-        review
+        author_name,
+        CDN,
+        PROJECT,
+        review,
+        source
 
     } = props
 
@@ -19,10 +21,11 @@ const Testimonials = ( props ) => {
             <p className="text-xl md:text-2xl font-gt_america_light text-left">“{ review }”</p>
             <div className="flex flex-col md:flex-row gap-2 md:gap-10 md:items-center">
                 <div className="w-40 aspect-video">
-                    <img
-                        src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
-                        alt={ alt }
-                        className="w-40 aspect-video"
+                    <PictureContain
+                        alternative_text={ alternative_text }
+                        CDN={ CDN }
+                        PROJECT={ PROJECT }
+                        source={ source }
                     />
                 </div>
                 <div>

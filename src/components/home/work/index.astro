@@ -1,0 +1,19 @@
+---
+
+// IMPORTS JSX COMPONENTS
+import Work from "@/components/home/work/jsx/index.jsx"
+
+// GET ASTRO PROPS
+const {
+
+    carousel_one,
+    carousel_two,
+    carousel_three,
+    CDN,
+    PROJECT
+
+} = Astro.props
+---
+<Work
+    client:load
+/>

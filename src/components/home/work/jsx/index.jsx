@@ -1,12 +1,22 @@
+// IMPORTS ATOMS
+import Picture from "@/atoms/picture/jsx/index.jsx"
+
+// IMPORTS REACT RESPONSIVE CAROUSEL
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 
-// IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
-
 const Work = ( props ) => {
 
-    const { carousel_one, carousel_two, carousel_three } = props
+    // GET PROPS
+    const {
+
+        carousel_one,
+        carousel_two,
+        carousel_three,
+        CDN,
+        PROJECT
+
+    } = props
 
     return (
         <section className="container mx-auto px-4 sm:px-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-lg mac:max-w-screen-xl 2xl:max-w-screen-2xl py-20 md:pt-8 md:pb-40">
@@ -20,9 +30,12 @@ const Work = ( props ) => {
                                     return (
                                         <div key={ "carousel-one-" + index } className="relative w-full overflow-hidden">
                                             <div className="w-20 md:w-full h-24 md:h-60 bg-zinc-300 overflow-hidden">
-                                                <img
-                                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
-                                                    className="w-full h-full object-cover"
+                                                <Picture
+                                                    alternative_text=""
+                                                    CDN={ CDN }
+                                                    image_width=""
+                                                    PROJECT={ PROJECT }
+                                                    source={ value.file }
                                                 />
                                             </div>
                                         </div>
@@ -40,9 +53,12 @@ const Work = ( props ) => {
                                     return (
                                         <div key={ "carousel-two-" + index } className="relative w-full overflow-hidden">
                                             <div className="w-full h-32 md:h-[500px] bg-zinc-300 overflow-hidden">
-                                                <img
-                                                    src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
-                                                    className="w-full h-full object-cover"
+                                                <Picture
+                                                    alternative_text=""
+                                                    CDN={ CDN }
+                                                    image_width=""
+                                                    PROJECT={ PROJECT }
+                                                    source={ value.file }
                                                 />
                                             </div>
                                         </div>
@@ -61,9 +77,12 @@ const Work = ( props ) => {
                                 return (
                                     <div key={ "carousel-three-" + index } className="relative w-full overflow-hidden">
                                         <div className="w-full aspect-[2/3] md:aspect-[3/2] bg-zinc-300 overflow-hidden">
-                                            <img
-                                                src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
-                                                className="object-cover w-full h-full"
+                                            <Picture
+                                                alternative_text=""
+                                                CDN={ CDN }
+                                                image_width=""
+                                                PROJECT={ PROJECT }
+                                                source={ value.file }
                                             />
                                         </div>
                                     </div>

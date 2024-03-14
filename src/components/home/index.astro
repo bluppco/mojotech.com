@@ -1,21 +1,21 @@
 ---
 
 // IMPORTS COMMON ASTRO COMPONENTS
-import Footer from "@/components/common/footer/Footer.astro"
-import Header from "@/components/common/header/Header.jsx"
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/index.astro"
 import HeaderBanner from "@/components/common/header-banner/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import AcceleratingLeaders from "@/components/home/case-studies/AcceleratingLeaders.astro"
-import Advantage from "@/components/home/advantage/Advantage"
+import AcceleratingLeaders from "@/components/home/case-studies/index.astro"
+import Advantage from "@/components/home/advantage/index.astro"
 import Carousel from "@/components/home/Carousel"
-import Clients from "@/components/home/clients/Clients"
-import Hero from "@/components/home/Hero.astro"
-import MoreServices from "@/components/home/MoreServices.astro"
-import OurProcess from "@/components/home/OurProcess.astro"
-import Services from "@/components/home/services/Services.astro"
-import ViewWork from "@/components/home/ViewWork.astro"
-import Work from "@/components/home/Work"
+import Clients from "@/components/home/clients/index.astro"
+import Hero from "@/components/home/index.astro"
+import MoreServices from "@/components/home/more-services/index.astro"
+import OurProcess from "@/components/home/our-process/index.astro"
+import Services from "@/components/home/services/index.astro"
+import ViewWork from "@/components/home/view-work/index.astro"
+import Work from "@/components/home/work/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -45,7 +45,8 @@ const {
     carousel_one={ home_data.work_carousel_one }
     carousel_three={ home_data.work_carousel_three }
     carousel_two={ home_data.work_carousel_two }
-    client:load
+    CDN={ CDN }
+    PROJECT={ PROJECT }
 />
 <!-- <Carousel
     client:load
@@ -63,22 +64,23 @@ const {
 />
 <Advantage
     advantage={ home_data.advantage }
-    client:load
     data={ advantages }
 />
 <OurProcess
     data={ home_data.our_process }
 />
 <AcceleratingLeaders
+    CDN={ CDN }
     data={ work }
+    PROJECT={ PROJECT }
 />
 <ViewWork
     data={ home_data.our_work }
 />
 <Clients
-    client:load
-    clients ={ home_data.clients }
-    data ={ testimonials }
+    CDN={ CDN }
+    clients={ home_data.clients }
+    data={ testimonials }
+    PROJECT={ PROJECT }
 />
 <Footer />
-@/components/common/header/jsx/Header.jsx

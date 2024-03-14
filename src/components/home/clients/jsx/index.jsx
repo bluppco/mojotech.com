@@ -1,26 +1,29 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Carousel } from 'react-responsive-carousel'
+// IMPORTS LAYOUTS
+import Container from "@/layouts/container/jsx/index.jsx"
 
-// IMPORT JSX LAYOUTS
-import ContainerJSX from "../../../layouts/container/jsx"
+// IMPORTS COMPONENTS
+import Testimonials from "../testimonials/jsx/index.jsx"
 
-// IMPORT JSX ATOMS
-import H2JSX from "../../../atoms/headings/two/jsx"
-
-// IMPORT JSX COMPONENTS
-import Testimonials from "./Testimonials"
-
-// IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+// IMPORTS ATOMS
+import HeadingTwo from "@/atoms/headings/two/jsx/index.jsx"
+import PictureContain from "@/atoms/picture/jsx/contain/index.jsx"
 
 const Clients = ( props ) => {
 
-	const { clients, data } = props
+	// GET PROPS
+	const {
+
+		CDN,
+		clients,
+		data,
+		PROJECT
+
+	} = props
 
 	return(
-		<ContainerJSX>
+		<Container>
 			<section className="space-y-4 md:space-y-10 py-10 md:py-20 relative">
-				<H2JSX>{ clients.title }</H2JSX>
+				<HeadingTwo>{ clients.title }</HeadingTwo>
 				<p className="text-xl md:text-2xl font-gt_america_light">{ clients.description }</p>
 				<div className="relative h-[520px] w-full">
 					{
@@ -30,11 +33,13 @@ const Clients = ( props ) => {
 							return(
 								<div key={ "testimonial-" + index } className="hover:opacity-0 transition-all duration-1000 absolute top-0">
 									<Testimonials
-										author_name={ item.name }
+										alternative_text={ item.name }
 										author_designation={ item.designation }
-										src={ item.cover }
-										alt={ item.alt }
+										author_name={ item.name }
+										CDN={ CDN }
+										PROJECT={ PROJECT }
 										review={ item.description }
+										source={ item.cover }
 									/>
 								</div>
 							)
@@ -50,10 +55,11 @@ const Clients = ( props ) => {
 
 							return(
 								<div className="w-40 aspect-video" key={ "clients-logo-" + index }>
-									<img
-										src={ CDN_LINK + item.file + "?quality=" + IMAGE_QUALITY }
-										alt=""
-										className="w-full h-full"
+									<PictureContain
+										alternative_text=""
+										CDN={ CDN }
+										PROJECT={ PROJECT }
+										source={ item.file }
 									/>
 								</div>
 							)
@@ -63,7 +69,7 @@ const Clients = ( props ) => {
 					}
 				</div>
 			</section>
-		</ContainerJSX>
+		</Container>
 	)
 
 }
