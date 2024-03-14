@@ -6,9 +6,8 @@ import Header from "@/components/common/header/index.astro"
 import HeaderBanner from "@/components/common/header-banner/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
-import AcceleratingLeaders from "@/components/home/case-studies/index.astro"
+import CaseStudies from "@/components/home/case-studies/index.astro"
 import Advantage from "@/components/home/advantage/index.astro"
-import Carousel from "@/components/home/Carousel"
 import Clients from "@/components/home/clients/index.astro"
 import Hero from "@/components/home/hero/index.astro"
 import MoreServices from "@/components/home/more-services/index.astro"
@@ -46,13 +45,6 @@ const {
     CDN={ CDN }
     PROJECT={ PROJECT }
 />
-<!-- <Carousel
-    client:load
-    data={ home_data.work_carousel_one }
-    showArrows={ true }
-    autoPlay={ true }
-    showDots={ true }
-/> -->
 <Services
     data={ services }
     services={ home_data.service }
@@ -67,7 +59,7 @@ const {
 <OurProcess
     data={ home_data.our_process }
 />
-<AcceleratingLeaders
+<CaseStudies
     CDN={ CDN }
     data={ work }
     PROJECT={ PROJECT }
