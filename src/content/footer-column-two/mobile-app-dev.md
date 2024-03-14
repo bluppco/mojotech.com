@@ -2,5 +2,5 @@
 order: 5
 live: true
 title: Mobile App Development
-link: ""
+link: "/services/mobile-app-development/"
 ---

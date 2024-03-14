@@ -2,5 +2,5 @@
 order: 4
 live: true
 title: AI Development
-link: ""
+link: "/services/artificial-intelligence-development/"
 ---

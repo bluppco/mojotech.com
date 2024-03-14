@@ -2,5 +2,5 @@
 order: 1
 live: true
 title: About
-link: ""
+link: "/who-we-are"
 ---
