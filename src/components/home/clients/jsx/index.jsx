@@ -25,10 +25,10 @@ const Clients = ( props ) => {
 
 	return(
 		<Container>
-			<section className="space-y-4 md:space-y-10 py-10 md:py-20 relative">
+			<section className="space-y-4 md:space-y-10 py-10 md:py-20 relative h-full">
 				<HeadingTwo>{ clients.title }</HeadingTwo>
 				<p className="text-xl md:text-2xl font-gt_america_light">{ clients.description }</p>
-				<div className="relative h-[520px] w-full">
+				<div className="relative h-[560px] md:h-[520px] w-full">
 					{
 
 						data.map( ( item, index ) => {
@@ -51,7 +51,7 @@ const Clients = ( props ) => {
 
 					}
 				</div>
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10">
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-40 md:pt-10">
 					{
 
 						images.map( ( item, index ) => {

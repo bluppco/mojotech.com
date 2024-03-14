@@ -16,7 +16,7 @@ const {
 
 const html = marked.parse( description )
 ---
-<div class="space-y-2">
+<div class="md:space-y-2">
     <HeadingThree>{ title }</HeadingThree>
     <section set:html={ html } class="markdown" />
 </div>

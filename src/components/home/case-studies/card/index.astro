@@ -28,7 +28,7 @@ const html = marked.parse( description )
 
 ---
 <div class={` ${ top_padding ? "md:pt-20" : "" } space-y-6`}>
-    <div class="w-full h-[540px] bg-zinc-200">
+    <div class="w-full h-[540px] bg-zinc-200 hidden md:block">
         <Picture
             alternative_text={ alternative_text }
             CDN={ CDN }
@@ -37,10 +37,16 @@ const html = marked.parse( description )
             source={ source }
         />
     </div>
-    <div>
+    <div class="w-full h-96 bg-zinc-200 md:hidden">
+        <img
+            alt={ alternative_text }
+            src={ CDN + PROJECT + "/" + source + "?quality=80&width=600" }
+        />
+    </div>
+    <div class="pt-12 md:pt-0">
         <HeadingThree>{ title }</HeadingThree>
         <section set:html={ html } class="markdown" />
-        <div class="pt-4">
+        <div class="md:pt-4">
             <a
                 href={ button_link }
                 class="text-lg underline hover:cursor-pointer"
