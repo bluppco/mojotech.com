@@ -2,5 +2,5 @@
 order: 1
 live: true
 title: Providence, RI
-link: ""
+link: "/providence"
 ---
