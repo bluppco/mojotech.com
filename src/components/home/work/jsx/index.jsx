@@ -20,7 +20,7 @@ const Work = ( props ) => {
     } = props
 
     return (
-        <section className="container mx-auto px-4 sm:px-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-lg mac:max-w-screen-xl 2xl:max-w-screen-2xl md:py-20 md:pt-8 md:pb-40">
+        <section className="container mx-auto px-4 sm:px-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-lg mac:max-w-screen-xl 2xl:max-w-screen-2xl md:py-20 md:pt-8 md:pb-40 overflow-hidden">
             <section className="grid grid-cols-2 gap-4 md:gap-10">
                 <div className="flex flex-col-reverse md:grid md:grid-cols-3 gap-4 md:gap-10">
                     <div className="flex md:flex-col md:justify-end md:mb-10">
@@ -30,7 +30,7 @@ const Work = ( props ) => {
                                 carousel_one.images.map( ( value, index ) => {
                                     return (
                                         <div key={ "carousel-one-" + index } className="relative w-full overflow-hidden">
-                                            <div className="w-20 md:w-full h-24 md:h-60 bg-zinc-600 overflow-hidden">
+                                            <div className="w-20 md:w-full h-24 md:h-60 bg-zinc-300 overflow-hidden">
                                                 <Picture
                                                     alternative_text=""
                                                     CDN={ CDN }
