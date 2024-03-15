@@ -24,7 +24,7 @@ const Work = ( props ) => {
             <section className="grid grid-cols-2 gap-4 md:gap-10">
                 <div className="flex flex-col-reverse md:grid md:grid-cols-3 gap-4 md:gap-10">
                     <div className="flex md:flex-col md:justify-end md:mb-10">
-                        <Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ false }>
+                        <Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ false } preventMovementUntilSwipeScrollTolerance={ true } swipeScrollTolerance={ 50 }>
                             {
 
                                 carousel_one.images.map( ( value, index ) => {
@@ -47,7 +47,7 @@ const Work = ( props ) => {
                         </Carousel>
                     </div>
                     <div className="md:col-span-2 flex flex-col md:justify-end md:mb-28">
-                        <Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ false }>
+                        <Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ false } preventMovementUntilSwipeScrollTolerance={ true } swipeScrollTolerance={ 50 }>
                             {
 
                                 carousel_two.images.map( ( value, index ) => {
@@ -71,7 +71,7 @@ const Work = ( props ) => {
                     </div>
                 </div>
                 <div className="flex flex-col md:justify-end">
-                    <Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ false }>
+                    <Carousel showThumbs={ false } showStatus={ false } showArrows={ false } autoPlay={ true } infiniteLoop={ true } showIndicators={ false } preventMovementUntilSwipeScrollTolerance={ true } swipeScrollTolerance={ 50 }>
                         {
 
                             carousel_three.images.map( ( value, index ) => {
