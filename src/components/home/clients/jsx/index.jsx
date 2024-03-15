@@ -25,33 +25,35 @@ const Clients = ( props ) => {
 
 	return(
 		<Container>
-			<section className="space-y-4 md:space-y-10 py-10 md:py-20 relative h-full">
-				<HeadingTwo>{ clients.title }</HeadingTwo>
-				<p className="text-xl md:text-2xl font-gt_america_light">{ clients.description }</p>
-				<div className="relative h-[560px] md:h-[520px] w-full">
-					{
+			<section className="py-10 md:py-20 relative h-full">
+				<div className="space-y-4 md:space-y-10">
+					<HeadingTwo>{ clients.title }</HeadingTwo>
+					<p className="text-xl md:text-2xl font-gt_america_light">{ clients.description }</p>
+					<div className="relative h-[560px] md:h-[520px] w-full">
+						{
 
-						data.map( ( item, index ) => {
+							data.map( ( item, index ) => {
 
-							return(
-								<div key={ "testimonial-" + index } className="hover:opacity-0 transition-all duration-1000 absolute top-0">
-									<Testimonials
-										alternative_text={ item.name }
-										author_designation={ item.designation }
-										author_name={ item.name }
-										CDN={ CDN }
-										PROJECT={ PROJECT }
-										review={ item.description }
-										source={ item.cover }
-									/>
-								</div>
-							)
+								return(
+									<div key={ "testimonial-" + index } className="hover:opacity-0 transition-all duration-1000 absolute top-0">
+										<Testimonials
+											alternative_text={ item.name }
+											author_designation={ item.designation }
+											author_name={ item.name }
+											CDN={ CDN }
+											PROJECT={ PROJECT }
+											review={ item.description }
+											source={ item.cover }
+										/>
+									</div>
+								)
 
-						})
+							})
 
-					}
+						}
+					</div>
 				</div>
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:pt-10">
+				<div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 					{
 
 						images.map( ( item, index ) => {
